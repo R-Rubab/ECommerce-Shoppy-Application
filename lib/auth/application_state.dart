@@ -24,27 +24,26 @@ class ApplicationState extends ChangeNotifier {
   }
 
   Future<void> signIn(String email, String password,
-      void Function(FirebaseAuthException e)errorCallBack ) async {
-        try{
-          await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
-        }on FirebaseAuthException catch(error){
-          errorCallBack(error);
-        }
-      }
+      void Function(FirebaseAuthException e) errorCallBack) async {
+    try {
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+    } on FirebaseAuthException catch (error) {
+      errorCallBack(error);
+    }
+  }
 
   Future<void> signUp(String email, String password,
-      void Function(FirebaseAuthException e)errorCallBack ) async {
-        try{
-          UserCredential userCredential =  await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
-        }on FirebaseAuthException catch(error){
-          errorCallBack(error);
-        }
-      }
+      void Function(FirebaseAuthException e) errorCallBack) async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: email, password: password);
+    } on FirebaseAuthException catch (error) {
+      errorCallBack(error);
+    }
+  }
 
-      void signOut()async{
-  await FirebaseAuth.instance.signOut();
+  void signOut() async {
+    await FirebaseAuth.instance.signOut();
+  }
 }
-}
-
-
-

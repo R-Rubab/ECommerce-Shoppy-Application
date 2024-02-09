@@ -47,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
- void loginButtonPressed() {
+  void loginButtonPressed() {
     setState(() {
       loading = true;
     });
