@@ -1,11 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_shoppers/utils/custom_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:ecommerce_shoppers/models/product.dart';
 
 class GridViewCard extends StatelessWidget {
   final int index;
+  final Product product;
   final void Function() onPressed;
-  const GridViewCard({super.key, required this.index, required this.onPressed});
+  const GridViewCard(
+      {super.key, required this.index, required this.onPressed, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +28,7 @@ class GridViewCard extends StatelessWidget {
                   child: SizedBox(
                     width: double.infinity,
                     child: CachedNetworkImage(
-                      imageUrl:
-                          'https://media.cnn.com/api/v1/images/stellar/prod/comfy-shoes-nike-new-lead.jpg?c=16x9&q=h_833,w_1480,c_fill',
+                      imageUrl: product.image,
                       fit: BoxFit.cover,
                     ),
                   )),
@@ -37,12 +39,12 @@ class GridViewCard extends StatelessWidget {
                     child: RichText(
                         text: TextSpan(
                             style: Theme.of(context).textTheme.headlineSmall,
-                            children: const [
+                            children: [
                           TextSpan(
-                            text: 'title\n',
+                            text: product.title,
                           ),
                           TextSpan(
-                            text: 'price',
+                            text: product.price.toString(),
                           )
                         ])),
                   ))

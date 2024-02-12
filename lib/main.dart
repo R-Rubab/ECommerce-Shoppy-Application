@@ -2,8 +2,6 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:ecommerce_shoppers/auth/application_state.dart';
 import 'package:ecommerce_shoppers/firebase_options.dart';
-import 'package:ecommerce_shoppers/routes/routes.dart';
-import 'package:ecommerce_shoppers/routes/routes_name.dart';
 import 'package:ecommerce_shoppers/screens/checkout.dart';
 import 'package:ecommerce_shoppers/screens/home.dart';
 import 'package:ecommerce_shoppers/screens/login_screen.dart';
@@ -21,14 +19,14 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  try {
+  // try {
     final String response =
         await rootBundle.loadString('assets/config/stripe.json');
-    final data = await jsonDecode(response);
+    final data = await json.decode(response);
     Stripe.publishableKey = data["publishableKey"];
-  } catch (e) {
-    log(e.toString());
-  }
+  // } catch (e) {
+  //   log(e.toString());
+  // }
   runApp(ChangeNotifierProvider(
     create: (context) => ApplicationState(),
     builder: (context, _) => Consumer<ApplicationState>(

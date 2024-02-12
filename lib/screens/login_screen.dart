@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:ecommerce_shoppers/auth/application_state.dart';
+import 'package:ecommerce_shoppers/auth/common.dart';
 import 'package:ecommerce_shoppers/utils/custom_theme.dart';
 import 'package:ecommerce_shoppers/auth/login_data.dart';
 import 'package:ecommerce_shoppers/widgets/custom_button.dart';
@@ -44,6 +45,8 @@ class _LoginScreenState extends State<LoginScreen> {
       setState(() {
         loading = false;
       });
+      CommonUtil.showAlert(
+          context, 'Error processing your request', e.message.toString());
     }
   }
 
@@ -63,12 +66,19 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        FocusScopeNode currentState = FocusScope.of(context);
-        if (currentState == primaryFocus) {
-          currentState.unfocus();
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (!currentFocus.hasPrimaryFocus) {
+          currentFocus.unfocus();
         }
       },
       child: Scaffold(

@@ -1,3 +1,4 @@
+import 'package:ecommerce_shoppers/auth/common.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 
@@ -14,13 +15,13 @@ class ApplicationState extends ChangeNotifier {
   Future<void> init() async {
     FirebaseAuth.instance.userChanges().listen((userFir) {
       if (userFir != null) {
-        user = userFir;
         loginState = ApplicationLoginState.loggedIn;
+        user = userFir;
       } else {
         loginState = ApplicationLoginState.loggedOut;
       }
-    });
     notifyListeners();
+    });
   }
 
   Future<void> signIn(String email, String password,
@@ -28,8 +29,8 @@ class ApplicationState extends ChangeNotifier {
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-    } on FirebaseAuthException catch (error) {
-      errorCallBack(error);
+    } on FirebaseAuthException catch (e) {
+      errorCallBack(e);
     }
   }
 
@@ -38,6 +39,8 @@ class ApplicationState extends ChangeNotifier {
     try {
       UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
+      await CommonUtil.backendCall(
+          userCredential.user!, CommonUtil.stripeUserCreate);
     } on FirebaseAuthException catch (error) {
       errorCallBack(error);
     }

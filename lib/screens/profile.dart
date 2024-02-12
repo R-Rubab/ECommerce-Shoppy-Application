@@ -1,5 +1,4 @@
 import 'package:ecommerce_shoppers/auth/application_state.dart';
-import 'package:ecommerce_shoppers/routes/routes_name.dart';
 import 'package:ecommerce_shoppers/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,16 +11,17 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  @override
-  Widget build(BuildContext context) {
     bool loading = false;
-    signOutButtonPressed() {
+    signOutButtonPressed() async{
       setState(() {
         loading = true;
       });
       Provider.of<ApplicationState>(context, listen: false).signOut();
     }
 
+  @override
+  Widget build(BuildContext context) {
+  
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,7 +35,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           onTap: signOutButtonPressed
           // Navigator.pushNamed(context, RoutesName.loginScreen);
           ,
-          title: 'SIGN In',
+          title: 'SIGN Out',
         ),
       ],
     );

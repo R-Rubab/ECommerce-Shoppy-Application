@@ -1,5 +1,4 @@
 import 'package:ecommerce_shoppers/routes/routes_name.dart';
-import 'package:ecommerce_shoppers/screens/card_detail.dart';
 import 'package:ecommerce_shoppers/screens/checkout.dart';
 import 'package:ecommerce_shoppers/screens/home.dart';
 import 'package:ecommerce_shoppers/screens/profile.dart';
@@ -30,10 +29,10 @@ class Routes {
         return MaterialPageRoute(
           builder: (context) => const LoginScreen(),
         );
-      case RoutesName.detailCardScreen:
-        return MaterialPageRoute(
-          builder: (context) => const DetailCardScreen(),
-        );
+      // case RoutesName.detailCardScreen:
+      //   return MaterialPageRoute(
+      //     builder: (context) => const DetailCardScreen(),
+      //   );
       case RoutesName.checkoutScreen:
         return MaterialPageRoute(
           builder: (context) => const CheckScreen(),
