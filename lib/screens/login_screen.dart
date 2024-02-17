@@ -40,13 +40,15 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   loginError(FirebaseAuthException e) {
-    log('error');
     if (e.message != '') {
       setState(() {
         loading = false;
+        // log('error in login screen ++++++++++++');
+        // Log the error for debugging purposes
+        log('Error during login screen: ${e.message}');
       });
-      CommonUtil.showAlert(
-          context, 'Error processing your request', e.message.toString());
+      // CommonUtil.showAlert(
+      //     context, 'Error processing your request', e.message.toString());
     }
   }
 
@@ -59,9 +61,11 @@ class _LoginScreenState extends State<LoginScreen> {
     if (mapEquals(data, LoginData.signUp)) {
       applicationState.signUp(
           emailController.text, passwordController.text, loginError);
+      log('=======[CURSOR] Sign up ==============');
     } else {
       applicationState.signIn(
           emailController.text, passwordController.text, loginError);
+      log('========== Sign In ==============');
     }
   }
 

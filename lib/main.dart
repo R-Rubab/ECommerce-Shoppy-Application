@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'package:ecommerce_shoppers/auth/application_state.dart';
 import 'package:ecommerce_shoppers/firebase_options.dart';
 import 'package:ecommerce_shoppers/screens/checkout.dart';
@@ -27,7 +26,8 @@ void main() async {
   // } catch (e) {
   //   log(e.toString());
   // }
-  runApp(ChangeNotifierProvider(
+  runApp(
+    ChangeNotifierProvider(
     create: (context) => ApplicationState(),
     builder: (context, _) => Consumer<ApplicationState>(
       builder: (context, applicationStateValue, _) {

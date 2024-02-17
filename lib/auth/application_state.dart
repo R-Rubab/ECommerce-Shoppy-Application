@@ -31,6 +31,8 @@ class ApplicationState extends ChangeNotifier {
           .signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
       errorCallBack(e);
+       // Log the error for debugging purposes
+      print('Error during sign-in: ${e.message}');
     }
   }
 
@@ -39,10 +41,12 @@ class ApplicationState extends ChangeNotifier {
     try {
       UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
-      await CommonUtil.backendCall(
-          userCredential.user!, CommonUtil.stripeUserCreate);
-    } on FirebaseAuthException catch (error) {
-      errorCallBack(error);
+      // await CommonUtil.backendCall(
+      //     userCredential.user!, CommonUtil.stripeUserCreate);
+    } on FirebaseAuthException catch (e) {
+      errorCallBack(e);
+       // Log the error for debugging purposes
+      print('Error during sign-Up: ${e.message}');
     }
   }
 
