@@ -47,8 +47,8 @@ class _LoginScreenState extends State<LoginScreen> {
         // Log the error for debugging purposes
         log('Error during login screen: ${e.message}');
       });
-      // CommonUtil.showAlert(
-      //     context, 'Error processing your request', e.message.toString());
+      CommonUtil.showAlert(
+          context, 'Error processing your request', e.message.toString());
     }
   }
 

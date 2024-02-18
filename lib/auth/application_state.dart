@@ -41,8 +41,8 @@ class ApplicationState extends ChangeNotifier {
     try {
       UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
-      // await CommonUtil.backendCall(
-      //     userCredential.user!, CommonUtil.stripeUserCreate);
+      await CommonUtil.backendCall(
+          userCredential.user!, CommonUtil.stripeUserCreate);
     } on FirebaseAuthException catch (e) {
       errorCallBack(e);
        // Log the error for debugging purposes
