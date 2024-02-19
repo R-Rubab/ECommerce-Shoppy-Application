@@ -14,18 +14,19 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-    Future<List<Product>>? products;
+  Future<List<Product>>? products;
 
-    @override
-    void initState() {
-      super.initState();
-      products = FirestoreUtil.getProducts([]);
-    }
+  @override
+  void initState() {
+    super.initState();
+    products = FirestoreUtil.getProducts([]);
+  }
+
   @override
   Widget build(BuildContext context) {
     // final data = ['1', '2', '3'];
-  
-  onCardPress(Product product) {
+
+    onCardPress(Product product) {
       Navigator.push(
           context,
           MaterialPageRoute(
@@ -33,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     product: product,
                   )));
     }
+
     return FutureBuilder<List<Product>>(
       future: products,
       builder: (context, AsyncSnapshot<List<Product>> snapshot) {
@@ -48,14 +50,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   product: snapshot.data![index],
                   index: index,
                   onPressed: () {
-                       onCardPress(snapshot.data![index]);
+                    onCardPress(snapshot.data![index]);
                     // Navigator.push(
                     //     context,
                     //     MaterialPageRoute(
                     //       builder: (context) => const DetailCardScreen(),
                     //     ));
                     // Navigator.pushNamed(context, RoutesName.detailCardScreen);
-                  }, 
+                  },
                 );
               },
             ),

@@ -24,6 +24,7 @@ void main() async {
         await rootBundle.loadString('assets/config/stripe.json');
     final data = await json.decode(response);
     Stripe.publishableKey = data["publishableKey"];
+    await Stripe.instance.applySettings();
   // } catch (e) {
   //   log(e.toString());
   // }

@@ -17,7 +17,6 @@ class DetailCardScreen extends StatefulWidget {
 }
 
 class _DetailCardScreenState extends State<DetailCardScreen> {
-
   bool loading = false;
 
   void onAddToCart() async {
@@ -34,7 +33,7 @@ class _DetailCardScreenState extends State<DetailCardScreen> {
 
   @override
   Widget build(BuildContext context) {
- container(void Function() onTap) {
+    container(void Function() onTap) {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
@@ -52,7 +51,8 @@ class _DetailCardScreenState extends State<DetailCardScreen> {
               'MRP: ${widget.product.price}',
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            CustomButton(loading: loading, onTap: onAddToCart, title: 'Add to card'),
+            CustomButton(
+                loading: loading, onTap: onAddToCart, title: 'Add to card'),
             Text(
               'About the items ',
               style: Theme.of(context).textTheme.headlineLarge,
@@ -62,6 +62,7 @@ class _DetailCardScreenState extends State<DetailCardScreen> {
               widget.product.description,
               style: Theme.of(context).textTheme.titleLarge,
             ),
+            const SizedBox(height: 15),
           ],
         ),
       );
@@ -116,8 +117,7 @@ class _DetailCardScreenState extends State<DetailCardScreen> {
                             ),
                             child: IconButton(
                                 onPressed: () {
-                                                     Navigator.of(context).pop(true);
-
+                                  Navigator.of(context).pop(true);
                                 },
                                 icon: const Icon(Icons.arrow_back_sharp)),
                           ),

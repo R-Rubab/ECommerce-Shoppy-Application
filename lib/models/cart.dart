@@ -6,8 +6,8 @@ part 'cart.g.dart';
 @JsonSerializable()
 class Cart extends Product {
   int count = 0;
-  Cart(String title, double price, String id, String description, String image, String category, this.count)
-      : super(title, price, id, description, image, category);
+  Cart(super.title, super.price, super.id, super.description, super.image,
+      super.category, this.count);
 
   factory Cart.fromJson(Map<String, dynamic> json) => _$CartFromJson(json);
 }

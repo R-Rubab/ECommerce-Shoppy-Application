@@ -13,14 +13,14 @@ class CommonUtil {
   static const String checkout = "/checkout";
 
   static backendCall(User user, String endPoint) async {
-    // String token = user.getIdToken().toString();
+    String token = user.getIdToken().toString();
     return post(Uri.parse(apiUrl + endPoint), headers: {
-      // "Content-Type": "application/json",
-      // "Authorization": "Bearer $token"
-      "Accept": "application/json",
-      "Content-Type": "application/x-www-form-urlencoded",
-      "Authorization":
-          "Bearer sk_test_51OguneLV7pIEJINToQY33mQGtjvh3pBN2Rb9T20YOkOlO5nMCIq38gddmNDT8ACwDYbYgid8GGWNROqIEbrbbana00GTU0dmwa"
+      // "Accept": "application/json",
+      "Content-Type": "application/json",
+      // "Content-Type": "application/x-www-form-urlencoded",
+      "Authorization": "Bearer $token"
+      // "Authorization":
+      //     "Bearer sk_test_51OguneLV7pIEJINToQY33mQGtjvh3pBN2Rb9T20YOkOlO5nMCIq38gddmNDT8ACwDYbYgid8GGWNROqIEbrbbana00GTU0dmwa"
     });
   }
 
@@ -60,6 +60,4 @@ class CommonUtil {
               ],
             ));
   }
-
-
 }

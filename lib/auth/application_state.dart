@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:ecommerce_shoppers/auth/common.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
@@ -32,7 +34,7 @@ class ApplicationState extends ChangeNotifier {
     } on FirebaseAuthException catch (e) {
       errorCallBack(e);
        // Log the error for debugging purposes
-      print('Error during sign-in: ${e.message}');
+      log('Error during sign-in: ${e.message}');
     }
   }
 
@@ -46,7 +48,7 @@ class ApplicationState extends ChangeNotifier {
     } on FirebaseAuthException catch (e) {
       errorCallBack(e);
        // Log the error for debugging purposes
-      print('Error during sign-Up: ${e.message}');
+      log('Error during sign-Up: ${e.message}');
     }
   }
 
