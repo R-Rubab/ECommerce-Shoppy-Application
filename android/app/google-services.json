@@ -8,6 +8,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:42337678794:android:ecd040b5ec8af40b6c4b33",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce_firebase_stripe_provider_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42337678794-jmdf1p625bh0l382g24bgq458eqd34op.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPMsFI1aJeW6dhebrL8JY7kb_1kLNW7-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "42337678794-jmdf1p625bh0l382g24bgq458eqd34op.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:42337678794:android:7fc6a3231973b7286c4b33",
         "android_client_info": {
           "package_name": "com.example.ecommerce_shoppers"
