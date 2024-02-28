@@ -9,6 +9,7 @@ import 'package:ecommerce_shoppers/utils/custom_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:provider/provider.dart';
 
@@ -17,19 +18,17 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
- 
 
   // try {
-    final String response =
-        await rootBundle.loadString('assets/config/stripe.json');
-    final data = await json.decode(response);
-    Stripe.publishableKey = data["publishableKey"];
-    await Stripe.instance.applySettings();
+  final String response =
+      await rootBundle.loadString('assets/config/stripe.json');
+  final data = await json.decode(response);
+  Stripe.publishableKey = data["publishableKey"];
+  await Stripe.instance.applySettings();
   // } catch (e) {
   //   log(e.toString());
   // }
-  runApp(
-    ChangeNotifierProvider(
+  runApp(ChangeNotifierProvider(
     create: (context) => ApplicationState(),
     builder: (context, _) => Consumer<ApplicationState>(
       builder: (context, applicationStateValue, _) {
@@ -62,18 +61,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return MaterialApp(
-    //   title: 'ECommerce Shoppers',
-    //   debugShowCheckedModeBanner: false,
-    //   theme: CustomTheme.getTheme(),
-    //   initialRoute: RoutesName.defaultTabControllerScreen,
-    //   onGenerateRoute: Routes.generateRoutes,
-    // );
     return DefaultTabController(
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.amber,
+            backgroundColor: CustomTheme.amber,
             title: const Text('SHOPPERS'),
           ),
           bottomNavigationBar: Container(
