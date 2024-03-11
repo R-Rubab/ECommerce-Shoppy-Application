@@ -107,7 +107,8 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 35),
             Center(
               child: Container(
-                  width: 355,
+                  margin: const EdgeInsets.symmetric(horizontal: 30),
+                  width: double.infinity,
                   height: 380,
                   decoration: BoxDecoration(
                       boxShadow: CustomTheme.cardShadow,

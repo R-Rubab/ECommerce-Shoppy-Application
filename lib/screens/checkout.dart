@@ -45,7 +45,6 @@ class _CheckScreenState extends State<CheckScreen> {
 
       if (error.isEmpty) {
         CommonUtil.showAlert(context, "Success", "Your order is placed");
-
       } else {
         CommonUtil.showAlert(context, "Alert", error);
       }
@@ -93,11 +92,12 @@ class _CheckScreenState extends State<CheckScreen> {
                     shrinkWrap: true,
                     padding: const EdgeInsets.symmetric(vertical: 30),
                     itemBuilder: (context, index) {
-                      return InkWell(
-                          onTap: () {
-                            onCardPress(snapshot.data![index]);
-                          },
-                          child: CartItemWidget(cart: snapshot.data![index]));
+                      return CartItemWidget(
+                        cart: snapshot.data![index],
+                        onTab: () {
+                          onCardPress(snapshot.data![index]);
+                        },
+                      );
                     },
                   ),
                 ),

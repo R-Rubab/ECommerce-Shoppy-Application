@@ -5,6 +5,7 @@ import 'package:ecommerce_shoppers/models/product.dart';
 
 import 'package:ecommerce_shoppers/utils/custom_theme.dart';
 import 'package:ecommerce_shoppers/widgets/custom_button.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -35,17 +36,30 @@ class _DetailCardScreenState extends State<DetailCardScreen> {
   Widget build(BuildContext context) {
     container(void Function() onTap) {
       return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 15.0),
-              child: Text(
-                widget.product.title,
-                style: Theme.of(context).textTheme.headlineLarge,
-              ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 15.0),
+                  child: Text(
+                    widget.product.title,
+                    style: Theme.of(context).textTheme.headlineLarge,
+                  ),
+                ),
+                const Spacer(),
+                InkWell(
+                  onTap: () {},
+                  child: const Icon(
+                    CupertinoIcons.heart_circle,
+                    color: Colors.amber,
+                    size: 40,
+                  ),
+                ),
+              ],
             ),
             Text(
               'MRP: ${widget.product.price}',

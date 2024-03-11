@@ -43,9 +43,8 @@ dependencies:
   json_annotation: ^4.8.1
   cached_network_image: ^3.3.1
 
-  
 # ==============================================
-    # "publishableKey": "pk_test_51OguneLV7pIEJINT4PXcYuvgqlG4YVLPDxaal4LzuHdyNLcuaj4Bao5bOacVpVREeWIW0yZsWAFnxygDwMccTCPA00jCRUbnsa"
+# "publishableKey": "pk_test_51OguneLV7pIEJINT4PXcYuvgqlG4YVLPDxaal4LzuHdyNLcuaj4Bao5bOacVpVREeWIW0yZsWAFnxygDwMccTCPA00jCRUbnsa"
 # ==============================================
 
 dev_dependencies:
