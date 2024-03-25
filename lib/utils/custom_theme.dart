@@ -94,7 +94,6 @@ class CustomTheme {
     //           height: 60,
     //           // elevation: 10,
     //           color: CustomTheme.amber,
-
     //           shape: CircularNotchedRectangle(),
     //           notchMargin: 10,
     //           child: TabBar(tabs: [
