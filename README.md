@@ -1,7 +1,9 @@
 # ecommerce_shoppers
 <img width="471" alt="ec1" src="https://github.com/R-Rubab/ECommerce-Shoppy-Application/assets/110218324/a07a9e78-d572-419c-aaeb-fe39ec3df4f3">
 
+<img width="436" alt="ec2" src="https://github.com/R-Rubab/ECommerce-Shoppy-Application/assets/110218324/8521d780-278f-4476-8afd-ffafe2122d7e">
 A new Flutter project.
+
 
 
 ## Getting Started
