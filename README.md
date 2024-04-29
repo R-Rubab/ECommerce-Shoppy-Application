@@ -6,6 +6,14 @@
 <p align="center">
 <img width="436" alt="ec2" src="https://github.com/R-Rubab/ECommerce-Shoppy-Application/assets/110218324/8521d780-278f-4476-8afd-ffafe2122d7e">
 </p>
+
+<p align="center">
+  <img width="427" alt="ec3" src="https://github.com/R-Rubab/ECommerce-Shoppy-Application/assets/110218324/848a989c-5454-4895-9a41-c3b30b6e746c">
+</p>
+
+<p align="center">
+<img width="392" alt="ec5" src="https://github.com/R-Rubab/ECommerce-Shoppy-Application/assets/110218324/3b24e381-5366-4f51-9416-2610ff33621b">
+</p>
 A new Flutter project.
 
 
